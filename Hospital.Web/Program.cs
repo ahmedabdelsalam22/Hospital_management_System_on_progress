@@ -1,7 +1,15 @@
-var builder = WebApplication.CreateBuilder(args);
+using Hospital.Repositories;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+var sqlConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ApplicationDbContext>(option=>
+option.UseSqlServer(connectionString:sqlConnectionString)
+);
+
 
 var app = builder.Build();
 
