@@ -11,7 +11,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(option=>
 option.UseSqlServer(connectionString:sqlConnectionString)
 );
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 var app = builder.Build();
