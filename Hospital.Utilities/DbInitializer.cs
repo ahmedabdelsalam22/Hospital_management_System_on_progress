@@ -33,7 +33,8 @@ namespace Hospital.Utilities
                 {
                     _context.Database.Migrate();
                 }
-            }catch(Exception ex) 
+            }
+            catch(Exception ex) 
             {
                 throw;
             }
