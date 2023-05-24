@@ -1,6 +1,5 @@
 using Hospital.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var sqlConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
